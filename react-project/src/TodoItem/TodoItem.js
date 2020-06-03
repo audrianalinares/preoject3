@@ -3,8 +3,16 @@ import Teact from 'react';
 class TodoItem extends React.Component {
 
     render() {
-        return(<div>list component</div>);
+        const { todo } = this.props;
+
+        return(
+            <div onClick={this.toggleTodo}>{todo}</div>
+            );
     }
+
+toggleTodo = () => {
+    
+}
 
 
 }

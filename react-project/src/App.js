@@ -33,7 +33,10 @@ class App extends React.Component {
 }
 
     addTodo = async (todo) => {
-      await this.setState({ todos: [...this.state.todos,todo]});
+      await this.setState({ todos: [...this.state.todos, {
+        text: todo,
+        completed: false
+      }] });
       localStorage.setItem('todos',JSON.stringify(this.state.todos));
       console.log(localStorage.getItem('todo'));
     }

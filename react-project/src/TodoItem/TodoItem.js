@@ -6,12 +6,12 @@ class TodoItem extends React.Component {
         const { todo } = this.props;
 
         return(
-            <div onClick={this.toggleTodo}>{todo}</div>
+            <div onClick={this.toggleTodo}>{todo.text}</div>
             );
     }
 
 toggleTodo = () => {
-    
+ this.props.updateTodo(this.props.todo);
 }
 
 

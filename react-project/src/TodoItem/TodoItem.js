@@ -1,4 +1,5 @@
 import Teact from 'react';
+import './style.css';
 
 class TodoItem extends React.Component {
 
@@ -6,12 +7,12 @@ class TodoItem extends React.Component {
         const { todo } = this.props;
 
         return(
-            <div onClick={this.toggleTodo}>{todo.text}</div>
+            <div className={'todoItem' + (todo.completed ? 'completed': '')} onClick={this.toggleTodo}>{todo.text}</div>
             );
     }
 
 toggleTodo = () => {
- this.props.updateTodo(this.props.todo);
+ this.props.updateTodoFn(this.props.todo);
 }
 
 
